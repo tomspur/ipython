@@ -29,11 +29,11 @@ import bdb
 import linecache
 import sys
 
-from IPython.utils import PyColorize
-from IPython.core import ipapi
-from IPython.utils import coloransi
-from IPython.utils.io import Term
-from IPython.core.excolors import exception_colors
+from ..utils import PyColorize
+from . import ipapi
+from ..utils import coloransi
+from ..utils.io import Term
+from .excolors import exception_colors
 
 # See if we can use pydb.
 has_pydb = False
@@ -94,7 +94,7 @@ class Tracer(object):
 
         Usage example:
 
-        from IPython.core.debugger import Tracer; debug_here = Tracer()
+        from .core.debugger import Tracer; debug_here = Tracer()
 
         ... later in your code
         debug_here()  # -> will open up the debugger at that point.

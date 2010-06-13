@@ -77,12 +77,12 @@ import re
 import shlex
 import sys
 
-from IPython.core.error import TryNext
-from IPython.core.prefilter import ESC_MAGIC
-from IPython.utils import generics
-from IPython.utils.frame import debugx
-from IPython.utils.dir2 import dir2
-import IPython.utils.rlineimpl as readline
+from .error import TryNext
+from .prefilter import ESC_MAGIC
+from ..utils import generics
+from ..utils.frame import debugx
+from ..utils.dir2 import dir2
+from ..utils import rlineimpl as readline
 
 #-----------------------------------------------------------------------------
 # Globals
@@ -651,7 +651,7 @@ class IPCompleter(Completer):
             except IndexError:
                 return None
         except:
-            #from IPython.core.ultratb import AutoFormattedTB; # dbg
+            #from .ultratb import AutoFormattedTB; # dbg
             #tb=AutoFormattedTB('Verbose');tb() #dbg
             
             # If completion fails, don't annoy the user.

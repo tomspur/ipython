@@ -90,13 +90,13 @@ from inspect import getsourcefile, getfile, getmodule,\
 
 # IPython's own modules
 # Modified pdb which doesn't damage IPython's readline handling
-from IPython.utils import PyColorize
-from IPython.core import debugger, ipapi
-from IPython.core.display_trap import DisplayTrap
-from IPython.core.excolors import exception_colors
-from IPython.utils.data import uniq_stable
-from IPython.utils.io import Term
-from IPython.utils.warn import info, error
+from . import debugger, ipapi
+from .display_trap import DisplayTrap
+from .excolors import exception_colors
+from ..utils import PyColorize
+from ..utils.data import uniq_stable
+from ..utils.io import Term
+from ..utils.warn import info, error
 
 # Globals
 # amount of space to put line numbers before verbose tracebacks

@@ -31,48 +31,48 @@ import sys
 import tempfile
 from contextlib import nested
 
-from IPython.core import debugger, oinspect
-from IPython.core import history as ipcorehist
-from IPython.core import prefilter
-from IPython.core import shadowns
-from IPython.core import ultratb
-from IPython.core.alias import AliasManager
-from IPython.core.builtin_trap import BuiltinTrap
-from IPython.core.component import Component
-from IPython.core.display_trap import DisplayTrap
-from IPython.core.error import TryNext, UsageError
-from IPython.core.fakemodule import FakeModule, init_fakemod_dict
-from IPython.core.logger import Logger
-from IPython.core.magic import Magic
-from IPython.core.prefilter import PrefilterManager
-from IPython.core.prompts import CachedOutput
-from IPython.core.usage import interactive_usage, default_banner
-import .hooks
-from IPython.external.Itpl import ItplNS
-from IPython.lib.inputhook import enable_gui
-from IPython.lib.backgroundjobs import BackgroundJobManager
-from IPython.lib.pylabtools import pylab_activate
-from IPython.utils import PyColorize
-from IPython.utils import pickleshare
-from IPython.utils.doctestreload import doctest_reload
-from IPython.utils.ipstruct import Struct
-from IPython.utils.io import Term, ask_yes_no
-from IPython.utils.path import get_home_dir, get_ipython_dir, HomeDirError
-from IPython.utils.process import (
+from . import debugger, oinspect
+from . import history as ipcorehist
+from . import prefilter
+from . import shadowns
+from . import ultratb
+from .alias import AliasManager
+from .builtin_trap import BuiltinTrap
+from .component import Component
+from .display_trap import DisplayTrap
+from .error import TryNext, UsageError
+from .fakemodule import FakeModule, init_fakemod_dict
+from .logger import Logger
+from .magic import Magic
+from .prefilter import PrefilterManager
+from .prompts import CachedOutput
+from .usage import interactive_usage, default_banner
+from . import hooks
+from ..external.Itpl import ItplNS
+from ..lib.inputhook import enable_gui
+from ..lib.backgroundjobs import BackgroundJobManager
+from ..lib.pylabtools import pylab_activate
+from ..utils import PyColorize
+from ..utils import pickleshare
+from ..utils.doctestreload import doctest_reload
+from ..utils.ipstruct import Struct
+from ..utils.io import Term, ask_yes_no
+from ..utils.path import get_home_dir, get_ipython_dir, HomeDirError
+from ..utils.process import (
     abbrev_cwd,
     getoutput,
     getoutputerror
 )
-# import IPython.utils.rlineimpl as readline
-from IPython.utils.strdispatch import StrDispatch
-from IPython.utils.syspathcontext import prepended_to_syspath
-from IPython.utils.terminal import toggle_set_term_title, set_term_title
-from IPython.utils.warn import warn, error, fatal
-from IPython.utils.traitlets import (
+# import ..utils.rlineimpl as readline
+from ..utils.strdispatch import StrDispatch
+from ..utils.syspathcontext import prepended_to_syspath
+from ..utils.terminal import toggle_set_term_title, set_term_title
+from ..utils.warn import warn, error, fatal
+from ..utils.traitlets import (
     Int, Str, CBool, CaselessStrEnum, Enum, List, Unicode
 )
 
-# from IPython.utils import growl
+# from ..utils import growl
 # growl.start("IPython")
 
 #-----------------------------------------------------------------------------
@@ -605,7 +605,6 @@ class InteractiveShell(Component, Magic):
         self.strdispatchers = {}
 
         # Set all default hooks, defined in the IPython.hooks module.
-        hooks = IPython.core.hooks
         for hook_name in hooks.__all__:
             # default hooks have priority 100, i.e. low; user hooks should have
             # 0-100 priority
@@ -637,10 +636,10 @@ class InteractiveShell(Component, Magic):
             return
             
         dp = getattr(self.hooks, name, None)
-        if name not in IPython.core.hooks.__all__:
-            print "Warning! Hook '%s' is not one of %s" % (name, IPython.core.hooks.__all__ )
+        if name not in hooks.__all__:
+            print "Warning! Hook '%s' is not one of %s" % (name, hooks.__all__ )
         if not dp:
-            dp = IPython.core.hooks.CommandChainDispatcher()
+            dp = hooks.CommandChainDispatcher()
         
         try:
             dp.add(f,priority)
@@ -1190,7 +1189,7 @@ class InteractiveShell(Component, Magic):
         history around the call """
 
         if self.has_readline:
-            from IPython.utils import rlineimpl as readline
+            from ..utils import rlineimpl as readline
         else:
             return func
 
@@ -1527,7 +1526,7 @@ class InteractiveShell(Component, Magic):
         """Command history completion/saving/reloading."""
 
         if self.readline_use:
-            import IPython.utils.rlineimpl as readline
+            from ..utils import rlineimpl as readline
                   
         self.rl_next_input = None
         self.rl_do_indent = False
@@ -1547,7 +1546,7 @@ class InteractiveShell(Component, Magic):
             self.readline = readline
             sys.modules['readline'] = readline
             import atexit
-            from IPython.core.completer import IPCompleter
+            from .completer import IPCompleter
             self.Completer = IPCompleter(self,
                                          self.user_ns,
                                          self.user_global_ns,
@@ -1722,7 +1721,7 @@ class InteractiveShell(Component, Magic):
             Macro object is created by passing the string to it.
         """
         
-        from IPython.core import macro
+        from . import macro
 
         if isinstance(themacro, basestring):
             themacro = macro.Macro(themacro)
@@ -2385,7 +2384,7 @@ class InteractiveShell(Component, Magic):
         If :func:`load_ipython_extension` returns anything, this function
         will return that object.
         """
-        from IPython.utils.syspathcontext import prepended_to_syspath
+        from ..utils.syspathcontext import prepended_to_syspath
 
         if module_str not in sys.modules:
             with prepended_to_syspath(self.ipython_extension_dir):
@@ -2411,7 +2410,7 @@ class InteractiveShell(Component, Magic):
         :func:`reload` is called and then the :func:`load_ipython_extension`
         function of the module, if it exists is called.
         """
-        from IPython.utils.syspathcontext import prepended_to_syspath
+        from ..utils.syspathcontext import prepended_to_syspath
 
         with prepended_to_syspath(self.ipython_extension_dir):
             if module_str in sys.modules:

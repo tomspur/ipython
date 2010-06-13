@@ -10,7 +10,7 @@
 #-----------------------------------------------------------------------------
 
 import sys
-from IPython.core import release
+from . import release
 
 cl_usage = """\
 ipython [options] [files]

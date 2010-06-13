@@ -28,16 +28,16 @@ import logging
 import os
 import sys
 
-from IPython.core import release
-from IPython.core.crashhandler import CrashHandler
-from IPython.core.application import Application, BaseAppConfigLoader
-from IPython.core.iplib import InteractiveShell
-from IPython.config.loader import (
+from . import release
+from .crashhandler import CrashHandler
+from .application import Application, BaseAppConfigLoader
+from .iplib import InteractiveShell
+from ..config.loader import (
     Config,
     PyFileConfigLoader
 )
-from IPython.lib import inputhook
-from IPython.utils.path import filefind, get_ipython_dir
+from ..lib import inputhook
+from ..utils.path import filefind, get_ipython_dir
 from . import usage
 
 #-----------------------------------------------------------------------------

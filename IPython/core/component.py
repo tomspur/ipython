@@ -24,9 +24,9 @@ from copy import deepcopy
 import datetime
 from weakref import WeakValueDictionary
 
-from IPython.utils.importstring import import_item
-from IPython.config.loader import Config
-from IPython.utils.traitlets import (
+from ..utils.importstring import import_item
+from ..config.loader import Config
+from ..utils.traitlets import (
     HasTraits, MetaHasTraits, Instance, This
 )
 

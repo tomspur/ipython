@@ -46,10 +46,10 @@ import sys
 
 from pprint import PrettyPrinter
 
-from IPython.utils.io import Term
-from IPython.utils.process import shell
+from ..utils.io import Term
+from ..utils.process import shell
 
-from IPython.core.error import TryNext
+from .error import TryNext
 
 # List here all the default hooks.  For now it's just the editor functions
 # but over time we'll move here all the public API for user-accessible things.
@@ -259,7 +259,7 @@ def pre_runcode_hook(self):
 def clipboard_get(self):
     """ Get text from the clipboard.
     """
-    from IPython.lib.clipboard import (
+    from ..lib.clipboard import (
         osx_clipboard_get, tkinter_clipboard_get, 
         win32_clipboard_get
     )

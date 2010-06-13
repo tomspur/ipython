@@ -21,10 +21,10 @@ Authors:
 
 import __builtin__
 
-from IPython.core.component import Component
-from IPython.core.quitter import Quitter
+from .component import Component
+from .quitter import Quitter
 
-from IPython.utils.autoattr import auto_attr
+from ..utils.autoattr import auto_attr
 
 #-----------------------------------------------------------------------------
 # Classes and functions
@@ -90,7 +90,7 @@ class BuiltinTrap(Component):
 
         # Recursive reload function
         try:
-            from IPython.lib import deepreload
+            from ..lib import deepreload
             if self.shell.deep_reload:
                 self.add_builtin('reload', deepreload.reload)
             else:

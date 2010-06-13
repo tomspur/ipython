@@ -27,13 +27,13 @@ import sys
 import types
 
 # IPython's own
-from IPython.core.page import page
-from IPython.external.Itpl import itpl
-from IPython.utils import PyColorize
-from IPython.utils.io import Term
-from IPython.utils.text import indent
-from IPython.utils.wildcard import list_namespace
-from IPython.utils.coloransi import *
+from .page import page
+from ..external.Itpl import itpl
+from ..utils import PyColorize
+from ..utils.io import Term
+from ..utils.text import indent
+from ..utils.wildcard import list_namespace
+from ..utils.coloransi import *
 
 #****************************************************************************
 # HACK!!! This is a crude fix for bugs in python 2.3's inspect module.  We

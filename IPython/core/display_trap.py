@@ -22,7 +22,7 @@ Authors:
 
 import sys
 
-from IPython.core.component import Component
+from .component import Component
 
 #-----------------------------------------------------------------------------
 # Classes and functions

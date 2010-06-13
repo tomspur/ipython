@@ -19,13 +19,13 @@ import re
 import socket
 import sys
 
-from IPython.core import release
-from IPython.external.Itpl import ItplNS
-from IPython.core.error import TryNext
-from IPython.utils import coloransi
-import IPython.utils.generics
-from IPython.utils.warn import warn
-from IPython.utils.io import Term
+from . import release
+from ..external.Itpl import ItplNS
+from .error import TryNext
+from ..utils import coloransi
+from ..utils import generics
+from ..utils.warn import warn
+from ..utils.io import Term
 
 #****************************************************************************
 #Color schemes for Prompts.
@@ -586,7 +586,7 @@ class CachedOutput:
         display, e.g. when your own objects need special formatting.
         """
         try:
-            return IPython.utils.generics.result_display(arg)
+            return generics.result_display(arg)
         except TryNext:            
             return self.shell.hooks.result_display(arg)
 

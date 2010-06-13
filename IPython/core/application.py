@@ -32,9 +32,9 @@ import logging
 import os
 import sys
 
-from IPython.core import release, crashhandler
-from IPython.utils.path import get_ipython_dir, get_ipython_package_dir
-from IPython.config.loader import (
+from . import release, crashhandler
+from ..utils.path import get_ipython_dir, get_ipython_package_dir
+from ..config.loader import (
     PyFileConfigLoader,
     ArgParseConfigLoader,
     Config,

@@ -25,7 +25,7 @@ has been made into a component, this module will be sent to deathrow.
 
 def get():
     """Get the most recently created InteractiveShell instance."""
-    from IPython.core.iplib import InteractiveShell
+    from .iplib import InteractiveShell
     insts = InteractiveShell.get_instances()
     if len(insts)==0:
         return None

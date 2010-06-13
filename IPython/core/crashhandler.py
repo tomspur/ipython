@@ -23,9 +23,9 @@ import os
 import sys
 from pprint import pformat
 
-from IPython.core import ultratb
-from IPython.external.Itpl import itpl
-from IPython.utils.sysinfo import sys_info
+from . import ultratb
+from ..external.Itpl import itpl
+from ..utils.sysinfo import sys_info
 
 #-----------------------------------------------------------------------------
 # Code

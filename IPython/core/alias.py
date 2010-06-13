@@ -25,12 +25,12 @@ import os
 import re
 import sys
 
-from IPython.core.component import Component
-from IPython.core.splitinput import split_user_input
+from .component import Component
+from .splitinput import split_user_input
 
-from IPython.utils.traitlets import List
-from IPython.utils.autoattr import auto_attr
-from IPython.utils.warn import warn, error
+from ..utils.traitlets import List
+from ..utils.autoattr import auto_attr
+from ..utils.warn import warn, error
 
 #-----------------------------------------------------------------------------
 # Utilities

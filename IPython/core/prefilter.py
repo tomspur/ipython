@@ -29,16 +29,16 @@ import __builtin__
 import codeop
 import re
 
-from IPython.core.alias import AliasManager
-from IPython.core.autocall import IPyAutocall
-from IPython.core.component import Component
-from IPython.core.splitinput import split_user_input
-from IPython.core.page import page
+from .alias import AliasManager
+from .autocall import IPyAutocall
+from .component import Component
+from .splitinput import split_user_input
+from .page import page
 
-from IPython.utils.traitlets import List, Int, Any, Str, CBool, Bool
-from IPython.utils.io import Term
-from IPython.utils.text import make_quoted_expr
-from IPython.utils.autoattr import auto_attr
+from ..utils.traitlets import List, Int, Any, Str, CBool, Bool
+from ..utils.io import Term
+from ..utils.text import make_quoted_expr
+from ..utils.autoattr import auto_attr
 
 #-----------------------------------------------------------------------------
 # Global utilities, errors and constants

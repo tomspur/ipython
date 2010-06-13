@@ -5,9 +5,9 @@
 import fnmatch
 import os
 
-from IPython.utils.io import Term, ask_yes_no
-from IPython.utils.warn import warn
-from IPython.core import ipapi
+from ..utils.io import Term, ask_yes_no
+from ..utils.warn import warn
+from . import ipapi
 
 def magic_history(self, parameter_s = ''):
     """Print input history (_i<n> variables), with most recent last.

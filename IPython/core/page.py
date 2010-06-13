@@ -32,13 +32,13 @@ import re
 import sys
 import tempfile
 
-from IPython.core import ipapi
-from IPython.core.error import TryNext
-from IPython.utils.cursesimport import use_curses
-from IPython.utils.data import chop
-from IPython.utils.io import Term
-from IPython.utils.process import xsys
-from IPython.utils.terminal import get_terminal_size
+from . import ipapi
+from .error import TryNext
+from ..utils.cursesimport import use_curses
+from ..utils.data import chop
+from ..utils.io import Term
+from ..utils.process import xsys
+from ..utils.terminal import get_terminal_size
 
 
 #-----------------------------------------------------------------------------

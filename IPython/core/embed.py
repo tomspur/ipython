@@ -29,12 +29,12 @@ import __main__
 import sys
 from contextlib import nested
 
-from IPython.core import ultratb
-from IPython.core.iplib import InteractiveShell
-from IPython.core.ipapp import load_default_config
+from . import ultratb
+from .iplib import InteractiveShell
+from .ipapp import load_default_config
 
-from IPython.utils.traitlets import Bool, Str, CBool
-from IPython.utils.io import ask_yes_no
+from ..utils.traitlets import Bool, Str, CBool
+from ..utils.io import ask_yes_no
 
 
 #-----------------------------------------------------------------------------

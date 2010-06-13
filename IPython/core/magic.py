@@ -3491,7 +3491,7 @@ Defaulting color scheme to 'NoColor'"""
         your existing IPython session.
         """
 
-        from IPython.utils.ipstruct import Struct
+        from ..utils.ipstruct import Struct
 
         # Shorthands
         shell = self.shell
@@ -3610,7 +3610,7 @@ Defaulting color scheme to 'NoColor'"""
             overwrite = True
         else:
             overwrite = False
-        from IPython.config import profile
+        from ..config import profile
         profile_dir = os.path.split(profile.__file__)[0]
         ipython_dir = self.ipython_dir
         files = os.listdir(profile_dir)
@@ -3641,7 +3641,7 @@ Defaulting color scheme to 'NoColor'"""
             overwrite = True
         else:
             overwrite = False
-        from IPython.config import default
+        from ..config import default
         config_dir = os.path.split(default.__file__)[0]
         ipython_dir = self.ipython_dir
         default_config_file_name = 'ipython_config.py'
