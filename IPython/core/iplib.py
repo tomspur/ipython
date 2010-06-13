@@ -47,7 +47,7 @@ from IPython.core.magic import Magic
 from IPython.core.prefilter import PrefilterManager
 from IPython.core.prompts import CachedOutput
 from IPython.core.usage import interactive_usage, default_banner
-import IPython.core.hooks
+import .hooks
 from IPython.external.Itpl import ItplNS
 from IPython.lib.inputhook import enable_gui
 from IPython.lib.backgroundjobs import BackgroundJobManager

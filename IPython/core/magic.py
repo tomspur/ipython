@@ -47,26 +47,26 @@ if not hasattr(__future__,'CO_FUTURE_PRINT_FUNCTION'):
     __future__.CO_FUTURE_PRINT_FUNCTION = 65536
 
 import IPython
-from IPython.core import debugger, oinspect
-from IPython.core.error import TryNext
-from IPython.core.error import UsageError
-from IPython.core.fakemodule import FakeModule
-from IPython.core.macro import Macro
-from IPython.core.page import page
-from IPython.core.prefilter import ESC_MAGIC
-from IPython.lib.pylabtools import mpl_runner
-from IPython.lib.inputhook import enable_gui
-from IPython.external.Itpl import itpl, printpl
-from IPython.testing import decorators as testdec
-from IPython.utils.io import Term, file_read, nlprint
-from IPython.utils.path import get_py_filename
-from IPython.utils.process import arg_split, abbrev_cwd
-from IPython.utils.terminal import set_term_title
-from IPython.utils.text import LSString, SList, StringTypes
-from IPython.utils.timing import clock, clock2
-from IPython.utils.warn import warn, error
-from IPython.utils.ipstruct import Struct
-import IPython.utils.generics
+from . import debugger, oinspect
+from .error import TryNext
+from .error import UsageError
+from .fakemodule import FakeModule
+from .macro import Macro
+from .page import page
+from .prefilter import ESC_MAGIC
+from ..lib.pylabtools import mpl_runner
+from ..lib.inputhook import enable_gui
+from ..external.Itpl import itpl, printpl
+from ..testing import decorators as testdec
+from ..utils.io import Term, file_read, nlprint
+from ..utils.path import get_py_filename
+from ..utils.process import arg_split, abbrev_cwd
+from ..utils.terminal import set_term_title
+from ..utils.text import LSString, SList, StringTypes
+from ..utils.timing import clock, clock2
+from ..utils.warn import warn, error
+from ..utils.ipstruct import Struct
+from ..utils import generics
 
 #-----------------------------------------------------------------------------
 # Utility functions
@@ -2732,7 +2732,7 @@ Defaulting color scheme to 'NoColor'"""
         This function also resets the root module cache of module completer,
         used on slow filesystems.
         """
-        from IPython.core.alias import InvalidAliasError
+        from .core.alias import InvalidAliasError
 
         # for the benefit of module completer in ipy_completers.py
         del self.db['rootmodules']
@@ -3327,7 +3327,7 @@ Defaulting color scheme to 'NoColor'"""
     def _get_pasted_lines(self, sentinel):
         """ Yield pasted lines until the user enters the given sentinel value.
         """
-        from IPython.core import iplib
+        from .core import iplib
         print "Pasting code; enter '%s' alone on the line to stop." % sentinel
         while True:
             l = iplib.raw_input_original(':')
@@ -3466,8 +3466,8 @@ Defaulting color scheme to 'NoColor'"""
 
     def magic_quickref(self,arg):
         """ Show a quick reference sheet """
-        import IPython.core.usage
-        qr = IPython.core.usage.quick_reference + self.magic_magic('-brief')
+        from .core import usage
+        qr = usage.quick_reference + self.magic_magic('-brief')
         
         page(qr)
 

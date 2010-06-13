@@ -30,8 +30,8 @@ Please migrate your code to use these classes instead.
 
 warn(msg, category=DeprecationWarning, stacklevel=1)
 
-from IPython.core.iplib import InteractiveShell as IPShell
-from IPython.core.embed import InteractiveShellEmbed as IPShellEmbed
+from .core.iplib import InteractiveShell as IPShell
+from .core.embed import InteractiveShellEmbed as IPShellEmbed
 
 def start(user_ns=None, embedded=False):
     """Return an instance of :class:`InteractiveShell`."""

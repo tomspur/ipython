@@ -25,4 +25,4 @@ to use the new IPython.core.iplib module"""
 
 warn(msg, category=DeprecationWarning, stacklevel=1)
 
-from IPython.core.iplib import *
+from .core.iplib import *
