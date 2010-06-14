@@ -26,6 +26,8 @@ rid of that dependency, we could move it there.
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 import os
 import re

@@ -40,6 +40,8 @@ somewhere in your configuration files or ipython command line.
 #  Distributed under the terms of the BSD License.  The full license is in
 #  the file COPYING, distributed as part of this software.
 #*****************************************************************************
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 import os, bisect
 import sys

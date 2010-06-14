@@ -15,6 +15,7 @@ IPython is a set of tools for interactive and exploratory computing in Python.
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
 from __future__ import absolute_import
 
 import os

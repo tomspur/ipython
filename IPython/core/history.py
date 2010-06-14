@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """ History related magics and functionality """
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 # Stdlib imports
 import fnmatch

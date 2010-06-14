@@ -17,6 +17,7 @@ Main IPython Component
 #-----------------------------------------------------------------------------
 
 from __future__ import with_statement
+# PY2.5: relative imports (pep 0328)
 from __future__ import absolute_import
 
 import __builtin__

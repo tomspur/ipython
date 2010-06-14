@@ -65,6 +65,8 @@ used, and this module (and the readline module) are silently inactive.
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 import __builtin__
 import __main__

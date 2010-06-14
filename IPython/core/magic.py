@@ -14,6 +14,8 @@
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 import __builtin__
 import __future__
@@ -47,6 +49,7 @@ if not hasattr(__future__,'CO_FUTURE_PRINT_FUNCTION'):
     __future__.CO_FUTURE_PRINT_FUNCTION = 65536
 
 import IPython
+
 from . import debugger, oinspect
 from .error import TryNext
 from .error import UsageError

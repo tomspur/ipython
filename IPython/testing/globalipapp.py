@@ -6,6 +6,7 @@ into a fit.  This code should be considered a gross hack, but it gets the job
 done.
 """
 
+# PY2.5: relative imports (pep 0328)
 from __future__ import absolute_import
 
 #-----------------------------------------------------------------------------

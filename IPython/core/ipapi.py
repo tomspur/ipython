@@ -17,6 +17,8 @@ has been made into a component, this module will be sent to deathrow.
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 #-----------------------------------------------------------------------------
 # Classes and functions

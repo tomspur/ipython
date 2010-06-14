@@ -25,4 +25,7 @@ to use the new IPython.core.iplib module"""
 
 warn(msg, category=DeprecationWarning, stacklevel=1)
 
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
+
 from .core.iplib import *

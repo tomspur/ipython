@@ -27,10 +27,13 @@ Notes
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 import logging
 import os
 import sys
+
 
 from . import release, crashhandler
 from ..utils.path import get_ipython_dir, get_ipython_package_dir

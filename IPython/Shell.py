@@ -30,6 +30,9 @@ Please migrate your code to use these classes instead.
 
 warn(msg, category=DeprecationWarning, stacklevel=1)
 
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
+
 from .core.iplib import InteractiveShell as IPShell
 from .core.embed import InteractiveShellEmbed as IPShellEmbed
 

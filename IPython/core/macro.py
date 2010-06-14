@@ -7,6 +7,9 @@
 #  the file COPYING, distributed as part of this software.
 #*****************************************************************************
 
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
+
 from ..utils.io import Term
 from .autocall import IPyAutocall
 

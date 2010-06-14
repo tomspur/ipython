@@ -13,6 +13,8 @@ reference the name under which an object is being read.
 #  Distributed under the terms of the BSD License.  The full license is in
 #  the file COPYING, distributed as part of this software.
 #*****************************************************************************
+# PY2.5: relative imports (pep 0328)
+from __future__ import absolute_import
 
 __all__ = ['Inspector','InspectColors']
 
