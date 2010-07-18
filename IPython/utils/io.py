@@ -74,6 +74,12 @@ class IOTerm:
 # Global variable to be used for all I/O
 Term = IOTerm()
 
+def print_cerr(x):
+    Term.cerr.write(x)
+
+def print_cout(x):
+    Term.cout.write(x)
+
 
 import IPython.utils.rlineimpl as readline
 # Remake Term to use the readline i/o facilities
