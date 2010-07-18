@@ -41,12 +41,14 @@ import warnings
 # We need to monkeypatch a small problem in nose itself first, before importing
 # it for actual use.  This should get into nose upstream, but its release cycle
 # is slow and we need it for our parametric tests to work correctly.
-from IPython.testing import nosepatch
+import nosepatch
 # Now, proceed to import nose itself
 import nose.plugins.builtin
 from nose.core import TestProgram
 
 # Our own imports
+# import relative ("from .. import foo" is not working here)
+sys.path.insert(0, os.sep.join(__file__.split(os.sep)[:-3]))
 from IPython.utils.path import get_ipython_module_path
 from IPython.utils.process import find_cmd, pycmd2argv
 from IPython.utils.sysinfo import sys_info
