@@ -17,13 +17,13 @@ __test__ = {}
 # Imports
 #-------------------------------------------------------------------------------
 
+import uuid
+
 # Third-party
 from twisted.python.failure import Failure
 from zope.interface import implements, classProvides
 
 # From IPython
-from IPython.external import guid
-
 from IPython.frontend.frontendbase import (FrontEndBase, IFrontEnd,
                                            IFrontEndFactory)
 from IPython.kernel.core.history import FrontEndHistory
@@ -67,7 +67,7 @@ class AsyncFrontEndBase(FrontEndBase):
             return Failure(Exception("Block is not compilable"))
         
         if(blockID == None):
-            blockID = guid.generate() 
+            blockID = str(uuid.uuid1())
         
         d = self.engine.execute(block)
         d.addCallback(self._add_history, block=block)

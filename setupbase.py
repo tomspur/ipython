@@ -112,7 +112,6 @@ def find_packages():
     add_package(packages, 'external.configobj')
     add_package(packages, 'external.decorator')
     add_package(packages, 'external.decorators')
-    add_package(packages, 'external.guid')
     add_package(packages, 'external.Itpl')
     add_package(packages, 'external.mglob')
     add_package(packages, 'external.path')

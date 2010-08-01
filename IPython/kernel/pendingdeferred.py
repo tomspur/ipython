@@ -26,7 +26,8 @@ from twisted.internet import defer
 from twisted.python import failure
 
 from IPython.kernel import error
-from IPython.external import guid
+
+import uuid
 
 class PendingDeferredManager(object):
     """A class to track pending deferreds.
@@ -46,7 +47,7 @@ class PendingDeferredManager(object):
         self.deferreds_to_callback = {} # dict of lists of deferreds to callback
         
     def get_deferred_id(self):
-        return guid.generate()
+        return str(uuid.uuid1())
     
     def quick_has_id(self, deferred_id):
         return deferred_id in self.deferred_ids

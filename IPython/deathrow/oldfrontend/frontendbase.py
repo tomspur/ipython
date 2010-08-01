@@ -22,8 +22,8 @@ __docformat__ = "restructuredtext en"
 #-------------------------------------------------------------------------------
 import string
 import codeop
-from IPython.external import guid
 
+import uuid
 
 from IPython.frontend.zopeinterface import (
     Interface, 
@@ -242,7 +242,7 @@ class FrontEndBase(object):
             raise Exception("Block is not compilable")
         
         if(blockID == None):
-            blockID = guid.generate()
+            blockID = str(uuid.uuid1())
         
         try:
             result = self.shell.execute(block)
