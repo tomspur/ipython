@@ -10,17 +10,17 @@ Authors:
 * Robert Kern
 """
 
-#-----------------------------------------------------------------------------
-#       Copyright (C) 2008-2010 The IPython Development Team
+#-------------------------------------------------------------------------------
+#       Copyright (C) 2008-2011 The IPython Development Team
 #       Copyright (C) 2001-2007 Fernando Perez <fperez@colorado.edu>
 #
 #  Distributed under the terms of the BSD License.  The full license is in
 #  the file COPYING, distributed as part of this software.
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Imports
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 import __builtin__
 
@@ -31,9 +31,9 @@ import IPython.utils.io
 from IPython.utils.traitlets import Instance, List
 from IPython.utils.warn import warn
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Main displayhook class
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # TODO: The DisplayHook class should be split into two classes, one that
 # manages the prompts and their synchronization and another that just does the
@@ -142,10 +142,10 @@ class DisplayHook(Configurable):
         self.prompt2.set_colors()
         self.prompt_out.set_colors()
 
-    #-------------------------------------------------------------------------
+    #---------------------------------------------------------------------------
     # Methods used in __call__. Override these methods to modify the behavior
     # of the displayhook.
-    #-------------------------------------------------------------------------
+    #---------------------------------------------------------------------------
 
     def check_for_underscore(self):
         """Check if the user has set the '_' variable by hand."""

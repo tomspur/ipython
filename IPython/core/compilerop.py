@@ -13,17 +13,17 @@ Authors
 # name is in the stdlib and name collisions with the stdlib tend to produce
 # weird problems (often with third-party tools).
 
-#-----------------------------------------------------------------------------
-#  Copyright (C) 2010 The IPython Development Team.
+#-------------------------------------------------------------------------------
+#  Copyright (C) 2010-2011 The IPython Development Team.
 #
 #  Distributed under the terms of the BSD License.
 #
 #  The full license is in the file COPYING.txt, distributed with this software.
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Imports
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 from __future__ import print_function
 
 # Stdlib imports
@@ -32,9 +32,9 @@ import hashlib
 import linecache
 import time
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Local utilities
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 def code_name(code, number=0):
     """ Compute a (probably) unique name for code for caching.
@@ -45,9 +45,9 @@ def code_name(code, number=0):
     # even with truncated hashes, and the full one makes tracebacks too long
     return '<ipython-input-{0}-{1}>'.format(number, hash_digest[:12])
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Classes and functions
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 class CachingCompiler(object):
     """A compiler that caches code compiled from interactive statements.

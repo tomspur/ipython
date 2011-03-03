@@ -1,10 +1,16 @@
+#-------------------------------------------------------------------------------
+#  Copyright (C) 2008-2010  The IPython Development Team
+#
+#  Distributed under the terms of the BSD License.  The full license is in
+#  the file COPYING, distributed as part of this software.
+#-------------------------------------------------------------------------------
 from IPython.config.loader import Config
 
 c = get_config()
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Global configuration
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # Basic Global config attributes
 
@@ -39,9 +45,9 @@ c = get_config()
 # to change to this directory before starting.
 # c.Global.work_dir = os.getcwd()
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Configure the client services
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # Basic client service config attributes
 
@@ -68,9 +74,9 @@ c = get_config()
 # also pick a specific network port above (FCClientServiceFactory.port).
 # c.FCClientServiceFactory.reuse_furls = False
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Configure the engine services
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # Basic config attributes for the engine services.
 
@@ -97,9 +103,9 @@ c = get_config()
 # also pick a specific network port above (FCClientServiceFactory.port).
 # c.FCEngineServiceFactory.reuse_furls = False
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Developer level configuration attributes
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # You shouldn't have to modify anything in this section. These attributes
 # are more for developers who want to change the behavior of the controller

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # encoding: utf-8
 """
 System command aliases.
@@ -9,17 +8,16 @@ Authors:
 * Brian Granger
 """
 
-#-----------------------------------------------------------------------------
-#  Copyright (C) 2008-2010  The IPython Development Team
+#-------------------------------------------------------------------------------
+#  Copyright (C) 2008-2011  The IPython Development Team
 #
-#  Distributed under the terms of the BSD License.
-#
-#  The full license is in the file COPYING.txt, distributed with this software.
-#-----------------------------------------------------------------------------
+#  Distributed under the terms of the BSD License.  The full license is in
+#  the file COPYING, distributed as part of this software.
+#-------------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Imports
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 import __builtin__
 import keyword
@@ -34,9 +32,9 @@ from IPython.utils.traitlets import List, Instance
 from IPython.utils.autoattr import auto_attr
 from IPython.utils.warn import warn, error
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Utilities
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # This is used as the pattern for calls to split_user_input.
 shell_line_split = re.compile(r'^(\s*)(\S*\s*)(.*$)')
@@ -106,9 +104,9 @@ class AliasError(Exception):
 class InvalidAliasError(AliasError):
     pass
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Main AliasManager class
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 class AliasManager(Configurable):
 

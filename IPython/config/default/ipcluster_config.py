@@ -1,10 +1,16 @@
+#-------------------------------------------------------------------------------
+#  Copyright (C) 2008-2010  The IPython Development Team
+#
+#  Distributed under the terms of the BSD License.  The full license is in
+#  the file COPYING, distributed as part of this software.
+#-------------------------------------------------------------------------------
 import os
 
 c = get_config()
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Select which launchers to use
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # This allows you to control what method is used to start the controller
 # and engines.  The following methods are currently supported:
@@ -31,9 +37,9 @@ c = get_config()
 # - WindowsHPCEngineSetLauncher
 # c.Global.engine_launcher = 'IPython.kernel.launcher.LocalEngineSetLauncher'
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Global configuration
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # The default number of engines that will be started. This is overridden by
 # the -n command line option: "ipcluster start -n 4"
@@ -50,9 +56,9 @@ c = get_config()
 # c.Global.work_dir = os.getcwd()
 
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Local process launchers
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # The command line arguments to call the controller with.
 # c.LocalControllerLauncher.controller_args = \
@@ -64,9 +70,9 @@ c = get_config()
 # Command line argument passed to the engines.
 # c.LocalEngineSetLauncher.engine_args = ['--log-to-file','--log-level', '40']
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # MPIExec launchers
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # The mpiexec/mpirun command to use in started the controller.
 # c.MPIExecControllerLauncher.mpi_cmd = ['mpiexec']
@@ -91,16 +97,16 @@ c = get_config()
 # The default number of engines to start if not given elsewhere.
 # c.MPIExecEngineSetLauncher.n = 1
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # SSH launchers
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # Todo
 
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Unix batch (PBS) schedulers launchers
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # The command line program to use to submit a PBS job.
 # c.PBSControllerLauncher.submit_command = 'qsub'
@@ -141,9 +147,9 @@ c = get_config()
 # submit the job. This will be written to the cluster directory.
 # c.PBSEngineSetLauncher.batch_file_name = u'pbs_batch_script_engines'
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Windows HPC Server 2008 launcher configuration
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # c.IPControllerJob.job_name = 'IPController'
 # c.IPControllerJob.is_exclusive = False
@@ -175,10 +181,5 @@ c = get_config()
 
 # c.WindowsHPCEngineSetLauncher.scheduler = 'HEADNODE'
 # c.WindowsHPCEngineSetLauncher.job_file_name = u'ipengineset_job.xml'
-
-
-
-
-
 
 

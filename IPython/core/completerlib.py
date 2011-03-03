@@ -2,17 +2,16 @@
 
 These are all loaded by default by IPython.
 """
-#-----------------------------------------------------------------------------
-#  Copyright (C) 2010 The IPython Development Team.
+#-------------------------------------------------------------------------------
+#  Copyright (C) 2010-2011  The IPython Development Team
 #
-#  Distributed under the terms of the BSD License.
-#
-#  The full license is in the file COPYING.txt, distributed with this software.
-#-----------------------------------------------------------------------------
+#  Distributed under the terms of the BSD License.  The full license is in
+#  the file COPYING, distributed as part of this software.
+#-------------------------------------------------------------------------------
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Imports
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 from __future__ import print_function
 
 # Stdlib imports
@@ -34,9 +33,9 @@ from IPython.core.error import TryNext
 # FIXME: this should be pulled in with the right call via the component system
 from IPython.core.ipapi import get as get_ipython
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Globals and constants
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 # Time in seconds after which the rootmodules will be stored permanently in the
 # ipython ip.db database (kept in the user's .ipython dir).
@@ -51,9 +50,9 @@ import_re = re.compile(r'.*(\.so|\.py[cod]?)$')
 # RE for the ipython %run command (python + ipython scripts)
 magic_run_re = re.compile(r'.*(\.ipy|\.py[w]?)$')
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Local utilities
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 def shlex_split(x):
     """Helper function to split lines into segments.
@@ -182,9 +181,9 @@ def try_import(mod, only_modules=False):
     return list(completions)
 
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Completion-related functions.
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 def quick_completer(cmd, completions):
     """ Easily create a trivial completer for a command.
@@ -241,9 +240,9 @@ def module_completion(line):
         mod = words[1]
         return try_import(mod)
 
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # Completers
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 # These all have the func(self, event) signature to be used as custom
 # completers
 

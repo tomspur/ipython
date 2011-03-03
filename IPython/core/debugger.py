@@ -15,15 +15,16 @@ details on the PSF (Python Software Foundation) standard license, see:
 
 http://www.python.org/2.2.3/license.html"""
 
-#*****************************************************************************
+#*******************************************************************************
 #
 #       This file is licensed under the PSF license.
 #
 #       Copyright (C) 2001 Python Software Foundation, www.python.org
-#       Copyright (C) 2005-2006 Fernando Perez. <fperez@colorado.edu>
+#       Copyright (C) 2005-2008 Fernando Perez. <fperez@colorado.edu>
+#       Copyright (C) 2008-2010  The IPython Development Team
 #
 #
-#*****************************************************************************
+#*******************************************************************************
 
 import bdb
 import linecache
@@ -482,7 +483,7 @@ class Pdb(OldPdb):
         Return `lineno` if it is, 0 if not (e.g. a docstring, comment, blank
         line or EOF). Warning: testing is not comprehensive.
         """
-        #######################################################################
+        ########################################################################
         # XXX Hack!  Use python-2.5 compatible code for this call, because with
         # all of our changes, we've drifted from the pdb api in 2.6.  For now,
         # changing:
@@ -496,7 +497,7 @@ class Pdb(OldPdb):
         # our updates with the new Pdb APIs in Python 2.6.
         #
         # End hack.  The rest of this method is copied verbatim from 2.6 pdb.py
-        #######################################################################
+        ########################################################################
         
         if not line:
             print >>self.stdout, 'End of file'

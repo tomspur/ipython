@@ -3,12 +3,13 @@
 Color schemes for exception handling code in IPython.
 """
 
-#*****************************************************************************
-#       Copyright (C) 2005-2006 Fernando Perez <fperez@colorado.edu>
+#-------------------------------------------------------------------------------
+#       Copyright (C) 2005-2007 Fernando Perez <fperez@colorado.edu>
+#       Copyright (C) 2008-2010  The IPython Development Team
 #
 #  Distributed under the terms of the BSD License.  The full license is in
 #  the file COPYING, distributed as part of this software.
-#*****************************************************************************
+#-------------------------------------------------------------------------------
 
 from IPython.utils.coloransi import ColorSchemeTable, TermColors, ColorScheme
 
