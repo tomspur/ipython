@@ -307,8 +307,10 @@ def get_ipython_module_path(module_str):
     """
     if module_str == 'IPython':
         return os.path.join(get_ipython_package_dir(), '__init__.py')
+    import os
     mod = import_item(module_str)
-    the_path = mod.__file__.replace('.pyc', '.py')
+    the_path = os.path.abspath(mod.__file__)
+    the_path = the_path.replace('.pyc', '.py')
     the_path = the_path.replace('.pyo', '.py')
     return py3compat.cast_unicode(the_path, fs_encoding)
 
