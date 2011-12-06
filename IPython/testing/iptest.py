@@ -363,6 +363,11 @@ def run_iptest():
     and accepts all of the standard nose arguments.
     """
 
+    # Add the IPython main directory to PYTHONPATH. This helps with running
+    # the testsuite from inside the git repository.
+    ipy_main_dir = os.path.sep.join(__file__.split(os.path.sep)[:-3])
+    sys.path.insert(0, ipy_main_dir)
+
     warnings.filterwarnings('ignore',
         'This will be removed soon.  Use IPython.testing.util instead')
 
