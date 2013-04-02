@@ -5,7 +5,6 @@ modifications IPython makes to system behavior don't send the doctest machinery
 into a fit.  This code should be considered a gross hack, but it gets the job
 done.
 """
-from __future__ import absolute_import
 from __future__ import print_function
 
 #-----------------------------------------------------------------------------

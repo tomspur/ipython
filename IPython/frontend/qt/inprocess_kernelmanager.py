@@ -6,7 +6,7 @@ from IPython.kernel.inprocess.kernelmanager import \
     InProcessShellChannel, InProcessIOPubChannel, InProcessStdInChannel, \
     InProcessHBChannel, InProcessKernelManager
 from IPython.utils.traitlets import Type
-from base_kernelmanager import QtShellChannelMixin, QtIOPubChannelMixin, \
+from .base_kernelmanager import QtShellChannelMixin, QtIOPubChannelMixin, \
     QtStdInChannelMixin, QtHBChannelMixin, QtKernelManagerMixin
 
 

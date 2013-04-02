@@ -17,7 +17,7 @@ from __future__ import print_function
 # Local imports.
 from IPython.utils.io import raw_print
 from IPython.utils.traitlets import Type
-from kernelmanager import InProcessKernelManager, InProcessShellChannel, \
+from .kernelmanager import InProcessKernelManager, InProcessShellChannel, \
     InProcessIOPubChannel, InProcessStdInChannel
 from IPython.kernel.blockingkernelmanager import BlockingChannelMixin
 
