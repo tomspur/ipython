@@ -15,6 +15,7 @@ Authors:
 #-----------------------------------------------------------------------------
 # Imports
 #-----------------------------------------------------------------------------
+from __future__ import print_function
 
 # stdlib
 import errno
@@ -583,7 +584,7 @@ class NotebookApp(BaseIPythonApplication):
         time.sleep(0.1)
         info = self.log.info
         info('interrupted')
-        print self.notebook_info()
+        print(self.notebook_info())
         sys.stdout.write("Shutdown this notebook server (y/[n])? ")
         sys.stdout.flush()
         r,w,x = select.select([sys.stdin], [], [], 5)
@@ -594,8 +595,8 @@ class NotebookApp(BaseIPythonApplication):
                 ioloop.IOLoop.instance().stop()
                 return
         else:
-            print "No answer for 5s:",
-        print "resuming operation..."
+            print("No answer for 5s:", end=' ')
+        print("resuming operation...")
         # no answer, or answer is no:
         # set it back to original SIGINT handler
         # use IOLoop.add_callback because signal.signal must be called
@@ -607,7 +608,7 @@ class NotebookApp(BaseIPythonApplication):
         ioloop.IOLoop.instance().stop()
 
     def _signal_info(self, sig, frame):
-        print self.notebook_info()
+        print(self.notebook_info())
     
     @catch_config_error
     def initialize(self, argv=None):

@@ -737,6 +737,6 @@ if __name__ == '__main__':
             self.list = ["blub", "blah", self]
 
         def get_foo(self):
-            print "foo"
+            print("foo")
 
     pprint(Foo(), verbose=True)

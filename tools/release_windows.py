@@ -61,6 +61,6 @@ for v,plat_py in pythons.items():
         if pypi:
             sh(pypi_cmd_t.format(fname=mangled))
         if github and gh_api:
-            print ("Uploading %s to GitHub" % mangled)
+            print("Uploading %s to GitHub" % mangled)
             desc = "IPython Installer for Python {v}.x on {plat}".format(**locals())
             gh_api.post_download('ipython/ipython', mangled, description=desc)

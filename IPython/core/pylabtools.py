@@ -353,7 +353,7 @@ def pylab_activate(user_ns, gui=None, import_all=True, shell=None, welcome_messa
             shell.pylab_gui_select = gui
         # Otherwise if they are different
         elif gui != pylab_gui_select:
-            print ('Warning: Cannot change to a different GUI toolkit: %s.'
+            print('Warning: Cannot change to a different GUI toolkit: %s.'
                     ' Using %s instead.' % (gui, pylab_gui_select))
             gui, backend = find_gui_and_backend(pylab_gui_select)
     activate_matplotlib(backend)
@@ -361,9 +361,9 @@ def pylab_activate(user_ns, gui=None, import_all=True, shell=None, welcome_messa
     if shell is not None:
         configure_inline_support(shell, backend, user_ns)
     if welcome_message:
-        print """
+        print("""
 Welcome to pylab, a matplotlib-based Python environment [backend: %s].
-For more information, type 'help(pylab)'.""" % backend
+For more information, type 'help(pylab)'.""" % backend)
         # flush stdout, just to be safe
         sys.stdout.flush()
 

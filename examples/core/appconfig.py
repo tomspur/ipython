@@ -87,8 +87,8 @@ class MyApp(Application):
         self.init_bar()
     
     def start(self):
-        print "app.config:"
-        print self.config
+        print("app.config:")
+        print(self.config)
 
 
 def main():
