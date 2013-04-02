@@ -110,7 +110,7 @@ def iter_fields(fields):
     for key in ('key', 'acl', 'Filename', 'success_action_status', 'AWSAccessKeyId',
         'Policy', 'Signature', 'Content-Type', 'file'):
         yield (key, fields.pop(key))
-    for (k,v) in fields.items():
+    for (k,v) in list(fields.items()):
         yield k,v
 
 def encode_multipart_formdata(fields, boundary=None):

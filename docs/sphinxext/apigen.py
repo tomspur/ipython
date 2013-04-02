@@ -25,7 +25,7 @@ import re
 class Obj(object):
     '''Namespace to hold arbitrary information.'''
     def __init__(self, **kwargs):
-        for k, v in kwargs.items():
+        for k, v in list(kwargs.items()):
             setattr(self, k, v)
                                         
 class FuncClsScanner(ast.NodeVisitor):

@@ -29,10 +29,10 @@ def pwordfreq(view, fnames):
     freqs_list = ar.get()
     word_set = set()
     for f in freqs_list:
-        word_set.update(f.keys())
+        word_set.update(list(f.keys()))
     freqs = dict(zip(word_set, repeat(0)))
     for f in freqs_list:
-        for word, count in f.iteritems():
+        for word, count in f.items():
             freqs[word] += count
     return freqs
 

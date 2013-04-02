@@ -21,7 +21,7 @@ def wordfreq(text, is_filename=False):
 def print_wordfreq(freqs, n=10):
     """Print the n most common words and counts in the freqs dict."""
     
-    words, counts = freqs.keys(), freqs.values()
+    words, counts = list(freqs.keys()), list(freqs.values())
     items = zip(counts, words)
     items.sort(reverse=True)
     for (count, word) in items[:n]:
@@ -29,10 +29,10 @@ def print_wordfreq(freqs, n=10):
 
 
 def wordfreq_to_weightsize(worddict, minsize=25, maxsize=50, minalpha=0.5, maxalpha=1.0):
-    mincount = min(worddict.itervalues())
-    maxcount = max(worddict.itervalues())
+    mincount = min(worddict.values())
+    maxcount = max(worddict.values())
     weights = {}
-    for k, v in worddict.iteritems():
+    for k, v in worddict.items():
         w = (v-mincount)/(maxcount-mincount)
         alpha = minalpha + (maxalpha-minalpha)*w
         size = minsize + (maxsize-minsize)*w
@@ -52,9 +52,9 @@ def tagcloud(worddict, n=10, minsize=25, maxsize=50, minalpha=0.5, maxalpha=1.0)
     plt.xticks([])
     plt.yticks([])
 
-    words = worddict.keys()
-    alphas = [v[0] for v in worddict.values()]
-    sizes = [v[1] for v in worddict.values()]
+    words = list(worddict.keys())
+    alphas = [v[0] for v in list(worddict.values())]
+    sizes = [v[1] for v in list(worddict.values())]
     items = zip(alphas, sizes, words)
     items.sort(reverse=True)
     for alpha, size, word in items[:n]:

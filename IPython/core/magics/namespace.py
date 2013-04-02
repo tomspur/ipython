@@ -581,7 +581,7 @@ class NamespaceMagics(Magics):
                     from numpy import ndarray
                     # This must be done with items and not iteritems because
                     # we're going to modify the dict in-place.
-                    for x,val in user_ns.items():
+                    for x,val in list(user_ns.items()):
                         if isinstance(val,ndarray):
                             del user_ns[x]
                 except ImportError:

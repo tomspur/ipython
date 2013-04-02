@@ -57,7 +57,7 @@ class MappingKernelManager(MultiKernelManager):
 
     def notebook_for_kernel(self, kernel_id):
         """Return the notebook_id for a kernel_id or None."""
-        notebook_ids = [k for k, v in self._notebook_mapping.iteritems() if v == kernel_id]
+        notebook_ids = [k for k, v in self._notebook_mapping.items() if v == kernel_id]
         if len(notebook_ids) == 1:
             return notebook_ids[0]
         else:

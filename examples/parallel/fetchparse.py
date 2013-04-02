@@ -73,7 +73,7 @@ class DistributedSpider(object):
             time.sleep(self.pollingDelay)
 
     def synchronize(self):
-        for url, ar in self.linksWorking.items():
+        for url, ar in list(self.linksWorking.items()):
             # Calling get_task_result with block=False will return None if the
             # task is not done yet.  This provides a simple way of polling.
             try:

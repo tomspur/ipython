@@ -34,7 +34,7 @@ def resolve_ref(json, base=None):
             temp.append(resolve_ref(item, base=base))
     elif type(json) is dict:
         temp = {};
-        for key,value in json.iteritems():
+        for key,value in json.items():
             if key == '$ref':
                 return resolve_ref(jsonpointer.resolve_pointer(base,value), base=base)
             else :

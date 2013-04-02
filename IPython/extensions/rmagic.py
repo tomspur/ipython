@@ -534,7 +534,7 @@ class RMagics(Magics):
             args.units = '"%s"' % args.units
 
         png_argdict = dict([(n, getattr(args, n)) for n in ['units', 'res', 'height', 'width', 'bg', 'pointsize']])
-        png_args = ','.join(['%s=%s' % (o,v) for o, v in png_argdict.items() if v is not None])
+        png_args = ','.join(['%s=%s' % (o,v) for o, v in list(png_argdict.items()) if v is not None])
         # execute the R code in a temporary directory
 
         tmpd = tempfile.mkdtemp()

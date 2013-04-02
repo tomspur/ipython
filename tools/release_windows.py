@@ -43,14 +43,14 @@ pythons = {
     },
 }
 
-for v,plat_py in pythons.items():
+for v,plat_py in list(pythons.items()):
     # deliberately mangle the name,
     # so easy_install doesn't find these and do horrible wrong things
     try:
         shutil.rmtree('build')
     except OSError:
         pass
-    for plat,py in plat_py.items():
+    for plat,py in list(plat_py.items()):
         cmd = cmd_t.format(**locals())
         sh(cmd)
         orig = glob.glob(os.path.join('dist', 'ipython-*.{plat}.exe'.format(**locals())))[0]

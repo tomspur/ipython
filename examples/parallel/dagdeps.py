@@ -101,9 +101,9 @@ def main(nodes, edges):
         pos[node] = (start, runtime)
         colors[node] = md.engine_id
     validate_tree(G, results)
-    nx.draw(G, pos, node_list=colors.keys(), node_color=colors.values(), cmap=gist_rainbow,
+    nx.draw(G, pos, node_list=list(colors.keys()), node_color=list(colors.values()), cmap=gist_rainbow,
             with_labels=False)
-    x,y = zip(*pos.values())
+    x,y = zip(*list(pos.values()))
     xmin,ymin = map(min, (x,y))
     xmax,ymax = map(max, (x,y))
     xscale = xmax-xmin

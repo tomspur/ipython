@@ -167,7 +167,7 @@ def ask_yes_no(prompt,default=None):
 
     answers = {'y':True,'n':False,'yes':True,'no':False}
     ans = None
-    while ans not in answers.keys():
+    while ans not in list(answers.keys()):
         try:
             ans = raw_input(prompt+' ').lower()
             if not ans:  # response was an empty string
@@ -175,7 +175,7 @@ def ask_yes_no(prompt,default=None):
         except KeyboardInterrupt:
             pass
         except EOFError:
-            if default in answers.keys():
+            if default in list(answers.keys()):
                 ans = default
                 print()
             else:

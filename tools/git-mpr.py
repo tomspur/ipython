@@ -107,7 +107,7 @@ def main(*args):
     if not_merged :
         print('*************************************************************************************')
         print('the following branch have not been merged automatically, considere doing it by hand :')
-        for num, cmd in not_merged.items() :
+        for num, cmd in list(not_merged.items()) :
             print( "PR {num}: {cmd}".format(num=num, cmd=cmd))
         print('*************************************************************************************')
 

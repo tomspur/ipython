@@ -71,7 +71,7 @@ def reverse_bintree(parents):
     {None: 0, 0: [1, 4], 4: [5, 6], 1: [2, 3]}
     """
     children = {}
-    for child,parent in parents.iteritems():
+    for child,parent in parents.items():
         if parent is None:
             children[None] = child
             continue
@@ -166,7 +166,7 @@ class BinaryTreeCommunicator(object):
         """
         
         # count the number of children we have
-        self.nchildren = btree.values().count(self.id)
+        self.nchildren = list(btree.values()).count(self.id)
         
         if self.root:
             return # root only binds

@@ -1020,7 +1020,7 @@ python-profiler package from non-free.""")
         """
         opts,args = self.parse_options(parameter_s,'r',mode='list')
         if not args:   # List existing macros
-            return sorted(k for k,v in self.shell.user_ns.iteritems() if\
+            return sorted(k for k,v in self.shell.user_ns.items() if\
                                                         isinstance(v, Macro))
         if len(args) == 1:
             raise UsageError(

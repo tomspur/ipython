@@ -44,7 +44,7 @@ class EngineCommunicator(object):
         {peer : (ident, addr, pub_addr, location)}
         where peer is the name, ident is the XREP identity, addr,pub_addr are the
         """
-        for peer, (ident, url, pub_url, location) in peers.items():
+        for peer, (ident, url, pub_url, location) in list(peers.items()):
             self.peers[peer] = ident
             if ident != self.identity:
                 self.sub.connect(disambiguate_url(pub_url, location))

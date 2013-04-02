@@ -614,7 +614,7 @@ class Kernel(Configurable):
                 exec code in shell.user_global_ns, shell.user_ns
                 result = working.get(resultname)
             finally:
-                for key in ns.iterkeys():
+                for key in ns.keys():
                     working.pop(key)
 
             result_buf = serialize_object(result,
