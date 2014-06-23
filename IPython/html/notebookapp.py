@@ -443,7 +443,8 @@ class NotebookApp(BaseIPythonApplication):
         or overriding individual files in the IPython"""
     )
     def _extra_static_paths_default(self):
-        return [os.path.join(self.profile_dir.location, 'static')]
+        return [os.path.join(self.profile_dir.location, 'static'),
+                '_jsdir']
     
     @property
     def static_file_path(self):
